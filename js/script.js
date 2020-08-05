@@ -39,6 +39,38 @@ jQuery(function ($) {
                     });
                 }
             }
+            if($('.phone').val()){
+                if(!validatePhone($('.phone').val())){
+                    erroreArrayElemnts.push(el[i]);
+                    var alertemail = '<p class="alert-email">Вы ввели неверний телефон!</p>';
+                    if ($('.phone').parents('.form-input').find('.alert-email').length > 0) {
+                        $('.phone').parents('.form-input').addClass('has-error');
+                        $('.phone').parents('.form-input').find('.alert-email').show();
+                    } else {
+                        $(alertemail).appendTo($('.phone').parents('.form-input .input-cont'));
+                        $('.phone').parents('.form-input').addClass('has-error');
+                    }
+                    $('.phone').focus(function (e) {
+                        $(e.target).parents('.form-input').removeClass('has-error');
+                        $(e.target).parents('.form-input').find('.alert-email').hide();
+                    });
+                }
+            }
+            if(!$('.valid-card').is(':checked')) {
+                erroreArrayElemnts.push(el[i]);
+                var alert = '<p class="alert-error">Выберите, пожалуйста, карту</p>';
+                if ($('.valid-card').parents('.card-group').find('.alert-error').length > 0) {
+                    $('.valid-card').parents('.card-group').addClass('has-error');
+                    $('.valid-card').parents('.card-group').find('.alert-error').show();
+                } else {
+                    $(alert).appendTo($('.valid-card').parents('.card-group'));
+                    $('.valid-card').parents('.card-group').addClass('has-error');
+                }
+                $('.valid-card').focus(function (e) {
+                    $(e.target).parents('.card-group').removeClass('has-error');
+                    $(e.target).parents('.card-group').find('.alert-error').hide();
+                });
+            }
             if (erroreArrayElemnts.length == 0) {
                 formValid.submit();
             }
@@ -52,4 +84,15 @@ jQuery(function ($) {
 function validateEmail(email) {
     var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
     return reg.test(email);
+}
+function validatePhone(phone)
+{
+    var regExp = /^(\([0-9]{3}\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}/;
+    var phone = phoneNumber.match(regExp);
+    if (phone) {
+      alert('yes');
+      return true;
+    }
+    alert('no');
+    return false;
 }
