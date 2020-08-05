@@ -478,7 +478,6 @@ body {
 // media
 @media screen and (max-width: 1600px) {
     .container-enter .body-enter,
-    .container-enter .body-enter .form-enter,
     .container-enter .body-enter .header-enter .social .social-btns {
         padding-top: 30px;
         padding-bottom: 30px;
@@ -603,6 +602,10 @@ body {
         display: block;
         margin: auto;
         margin-bottom: 15px;
+    }
+    .container-enter .body-enter .form-enter {
+        padding-left: 0px;
+        padding-right: 0px;
     }
 }
 @media screen and (max-width: 375px) {
