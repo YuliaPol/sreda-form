@@ -1,0 +1,34 @@
+jQuery(function ($) {
+    var formValid = document.getElementsByClassName('form-valid')[0];
+    $('.valid-form-send').click(function () {
+        $(this).parents('form').submit(function (e) {
+            e.preventDefault();
+            var el = document.querySelectorAll('[data-reqired]');
+            var erroreArrayElemnts = [];
+            var alert = '<p class="alert-error">Заполните, пожалуйста, поле..</p>';
+            for (var i = 0; i < el.length; i++) {
+                if (el[i].value === '' || el[i].value === ' ' || el[i].value === '-') {
+                    erroreArrayElemnts.push(el[i]);
+                    if ($(el[i]).parents('.form-input').find('.alert-error').length > 0) {
+                        $(el[i]).parents('.form-input').addClass('has-error');
+                        $(el[i]).parents('.form-input').find('.alert-error').show();
+                    } else {
+                        $(alert).appendTo($(el[i]).parents('.form-input .input-cont'));
+                        $(el[i]).parents('.form-input').addClass('has-error');
+                    }
+                    $(el[i]).focus(function (e) {
+                        $(e.target).parents('.form-input').removeClass('has-error');
+                        $(e.target).parents('.form-input').find('.alert-error').hide();
+                    });
+                }
+            }
+            if (erroreArrayElemnts.length == 0) {
+                formValid.submit();
+            }
+            if (erroreArrayElemnts.length > 0) {
+                console.log('error');
+                $("body").animate({scrollTop: erroreArrayElemnts[0]}, "slow");
+            }
+        });
+    });
+});
