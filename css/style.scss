@@ -593,9 +593,8 @@ body {
     .container-enter .body-enter .header-enter .social .social-btns .social-btn .google::before {
         margin-right: 5px;
     }
-    .container-enter .body-enter, .container-enter .body-enter .form-enter,
-    .container-enter .body-enter .header-enter .social .social-btns {
-        padding: 20px 10px;
+    .container-enter .body-enter {
+        padding: 20px 20px;
     }
     .container-register.container-enter .body-enter .btn-exit,
     .container-register.container-enter .body-enter .form-enter .form-submit .btn-submit {
@@ -609,6 +608,9 @@ body {
     }
 }
 @media screen and (max-width: 375px) {
+    .container-enter .body-enter {
+        padding: 20px 10px;
+    }
     .header .logo {
         max-width: 50px;
     }
