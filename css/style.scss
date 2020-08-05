@@ -200,7 +200,8 @@ body {
             padding: 40px 15px;
             .form-group {
                 padding-bottom: 15px;
-                .alert-error {
+                .alert-error,
+                .alert-email {
                     padding-top: 5px;
                     color: red;
                 }

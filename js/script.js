@@ -22,6 +22,23 @@ jQuery(function ($) {
                     });
                 }
             }
+            if($('.email').val()){
+                if(!validateEmail($('.email').val())){
+                    erroreArrayElemnts.push(el[i]);
+                    var alertemail = '<p class="alert-email">Вы ввели неверний e-mail!</p>';
+                    if ($('.email').parents('.form-input').find('.alert-email').length > 0) {
+                        $('.email').parents('.form-input').addClass('has-error');
+                        $('.email').parents('.form-input').find('.alert-email').show();
+                    } else {
+                        $(alertemail).appendTo($('.email').parents('.form-input .input-cont'));
+                        $('.email').parents('.form-input').addClass('has-error');
+                    }
+                    $('.email').focus(function (e) {
+                        $(e.target).parents('.form-input').removeClass('has-error');
+                        $(e.target).parents('.form-input').find('.alert-email').hide();
+                    });
+                }
+            }
             if (erroreArrayElemnts.length == 0) {
                 formValid.submit();
             }
@@ -32,3 +49,7 @@ jQuery(function ($) {
         });
     });
 });
+function validateEmail(email) {
+    var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+    return reg.test(email);
+}

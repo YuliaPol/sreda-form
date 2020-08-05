@@ -258,7 +258,8 @@ body {
   padding-bottom: 15px;
 }
 
-.container-enter .body-enter .form-enter .form-group .alert-error {
+.container-enter .body-enter .form-enter .form-group .alert-error,
+.container-enter .body-enter .form-enter .form-group .alert-email {
   padding-top: 5px;
   color: red;
 }
