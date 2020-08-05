@@ -26,8 +26,8 @@ jQuery(function ($) {
                 formValid.submit();
             }
             if (erroreArrayElemnts.length > 0) {
-                console.log('error');
-                $("body").animate({scrollTop: erroreArrayElemnts[0]}, "slow");
+                console.log('Valid error');
+                $("html, body").animate({scrollTop: 0}, "slow");
             }
         });
     });
