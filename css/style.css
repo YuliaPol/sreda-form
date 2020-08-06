@@ -584,7 +584,7 @@ body {
 }
 
 /* The Modal (background) */
-.custom-popup {
+.custom-popup-succes {
   display: none;
   /* Hidden by default */
   position: fixed;
@@ -615,13 +615,13 @@ body {
   /* The Close Button */
 }
 
-.custom-popup.show {
+.custom-popup-succes.show {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.custom-popup .modal-content {
+.custom-popup-succes .modal-content {
   margin: 0 auto;
   background: #fff;
   position: relative;
@@ -631,7 +631,7 @@ body {
   width: 600px;
 }
 
-.custom-popup .modal-content h2 {
+.custom-popup-succes .modal-content h2 {
   font-weight: 700;
   font-size: 20px;
   line-height: 28px;
@@ -640,13 +640,13 @@ body {
   margin-bottom: 35px;
 }
 
-.custom-popup .modal-content p {
+.custom-popup-succes .modal-content p {
   font-size: 14px;
   line-height: 23px;
   text-align: center;
 }
 
-.custom-popup .close {
+.custom-popup-succes .close {
   width: 44px;
   height: 44px;
   line-height: 44px;
@@ -662,8 +662,8 @@ body {
   font-size: 28px;
 }
 
-.custom-popup .close:hover,
-.custom-popup .close:focus {
+.custom-popup-succes .close:hover,
+.custom-popup-succes .close:focus {
   color: #000;
   text-decoration: none;
   cursor: pointer;

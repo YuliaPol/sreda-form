@@ -47,7 +47,7 @@
                             <label>
                                 <div class="text-label">Имя *</div>
                                 <div class="input-cont">
-                                    <input type="text" name="name" id="q-1" data-reqired="reqired">
+                                    <input type="text" name="q-2343" id="q-1" autocomplete="name" data-reqired="reqired">
                                 </div>
                             </label>
                         </div>
@@ -142,7 +142,7 @@
         </div>
     </div>
     
-    <div id="thankyou" class="custom-popup">
+    <div id="thankyou" class="custom-popup-succes">
         <div class="modal-content">
             <a href="#" class="close">x</a>
             <h2>Спасибо,
@@ -155,19 +155,19 @@
         </div>
     </div>
     <script>
+        $('#thankyou').addClass('show');
         // Get the modal
         var modal = document.getElementById("thankyou");
-        
-        // Get the <span> element that closes the modal
+ 
         var span = document.getElementsByClassName("close")[0];
         // When the user clicks on <span> (x), close the modal
         span.onclick = function() {
-            modal.style.display = "none";
+            $('#thankyou').hide();
         }
         // When the user clicks anywhere outside of the modal, close it
         window.onclick = function(event) {
             if (event.target == modal) {
-            modal.style.display = "none";
+                $('#thankyou').hide();
             }
         }
     </script>
