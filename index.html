@@ -42,7 +42,7 @@
                     </div>
                 </div>
                 <div class="form-enter">
-                    <form action="#" class="form-valid">
+                    <form action="#" class="form-valid" method="POST">
                         <div class="form-group form-input">
                             <label>
                                 <div class="text-label">Имя *</div>
@@ -91,7 +91,7 @@
                                 </div>
                                 <div class="card-name">
                                     <div class="test-radio">
-                                        <input type="radio" name="q-6" id="q-6" value="1"  class="valid-card">
+                                        <input type="radio" name="card" id="card" value="1"  class="valid-card">
                                         <div class="test-radio__answer"></div>
                                         <div class="name">
                                             Бронзовая карта (37$) с базовой поддержкой
@@ -107,7 +107,7 @@
                                 </div>
                                 <div class="card-name">
                                     <div class="test-radio">
-                                        <input type="radio" name="q-6" id="q-6" value="2"  class="valid-card">
+                                        <input type="radio" name="card" id="card" value="2"  class="valid-card">
                                         <div class="test-radio__answer"></div>
                                         <div class="name">
                                             Серебряная карта (55$) с личным коучем
@@ -123,7 +123,7 @@
                                 </div>
                                 <div class="card-name">
                                     <div class="test-radio">
-                                        <input type="radio" name="q-6" id="q-6" value="3" class="valid-card">
+                                        <input type="radio" name="card" id="card" value="3" class="valid-card">
                                         <div class="test-radio__answer"></div>
                                         <div class="name">
                                             Золотая карта (110$) c сопровождением автора курса
@@ -141,6 +141,36 @@
             </div>
         </div>
     </div>
+    
+    <div id="thankyou" class="custom-popup">
+        <div class="modal-content">
+            <a href="#" class="close">x</a>
+            <h2>Спасибо,
+                ваша заявка принята!</h2>
+            <div class="text">
+                <p>
+                    Мы свяжемся с вами в ближайшее время
+                </p>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Get the modal
+        var modal = document.getElementById("thankyou");
+        
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+            modal.style.display = "none";
+            }
+        }
+    </script>
     <script src="./js/script.js?786756789678"></script>
 </body>
 

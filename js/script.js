@@ -55,7 +55,8 @@ jQuery(function ($) {
                 });
             }
             if (erroreArrayElemnts.length == 0) {
-                formValid.submit();
+                $('#thankyou').addClass('show');
+                // formValid.submit();
             }
             if (erroreArrayElemnts.length > 0) {
                 console.log('Valid error');
